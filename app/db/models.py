@@ -18,7 +18,7 @@ class User(Base):
     telefono = Column(Integer, unique=True)
     creacion = Column(DateTime,default=datetime.now,onupdate=datetime.now)
     estado = Column(Boolean,default=False)
-    venta = relationship("Venta",backref="user", cascade="delete,merge")
+    r_venta = relationship("Venta",backref="user", cascade="delete,merge")
 
 class Venta(Base): 
     __tablename__ = "venta"
